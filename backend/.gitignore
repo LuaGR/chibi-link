@@ -1,0 +1,16 @@
+# Dependencias de Node.js
+node_modules/
+
+# Archivos compilados o distribuidos
+dist/
+build/
+
+# Archivos del entorno
+.env
+
+# Archivos del sistema operativo
+.DS_Store
+
+# Archivos generados por IDE
+.vscode/
+.idea/

@@ -1,0 +1,19 @@
+* {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  gap: 2rem;
+}
+
+.container-card {
+  width: 60%;
+  padding-bottom: 2rem;
+}
+
+.form-card {
+  width: 100%;
+}
+
+.input-card {
+  width: 50%;
+}
