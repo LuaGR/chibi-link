@@ -1,11 +1,11 @@
-import { Injectable, WritableSignal } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { inject } from '@angular/core';
 import { Observable } from 'rxjs';
 
 export interface Url {
   url: string;
-  shortUrl: string;
+  shortededUrl: string;
 }
 
 @Injectable({
@@ -16,8 +16,8 @@ export class ShortenerService {
   private apiUrl = 'http://localhost:3000';
   private http = inject(HttpClient);
 
-  postUrl(url: WritableSignal<string>): Observable<Url> {
+  postUrl(url: string): Observable<Url> {
     // Realizar la petición POST y devolver un Observable
-    return this.http.post<Url>(`${this.apiUrl}/`, { url: url() }); // Utiliza url() para obtener el valor actual
+    return this.http.post<Url>(`${this.apiUrl}/`, { url }); // Utiliza url() para obtener el valor actual
   }
 }

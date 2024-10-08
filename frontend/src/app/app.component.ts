@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { ShortenerService } from './services/shortener.service';
 import type { Url } from './services/shortener.service';
+import { ShortededUrlComponent } from './components/shorteded-url/shorteded-url.component';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +23,7 @@ import type { Url } from './services/shortener.service';
     MatInputModule,
     MatIconModule,
     FormsModule,
+    ShortededUrlComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -30,12 +32,12 @@ export class AppComponent {
   shortenerService = inject(ShortenerService);
   title = 'chibi-link';
   url = signal<string>('');
-  shortUrl = '';
+  shortededUrl = signal<string>('');
 
   handleUrl() {
-    this.shortenerService.postUrl(this.url).subscribe((data: Url) => {
-      this.shortUrl = data.shortUrl;
-      console.log(this.shortUrl);
+    this.shortenerService.postUrl(this.url()).subscribe((data: Url) => {
+      this.shortededUrl.set(data.shortededUrl);
+      console.log(this.shortededUrl());
     });
   }
 }

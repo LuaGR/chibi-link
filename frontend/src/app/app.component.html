@@ -17,7 +17,5 @@
     </mat-form-field>
   </mat-card-header>
 
-  <mat-card-content class="result-card">
-    <span> {{ shortUrl }} </span>
-  </mat-card-content>
+  <app-shorteded-url [shortededUrl]="shortededUrl()" />
 </mat-card>
