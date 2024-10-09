@@ -1,1 +1,12 @@
-<p>input-url works!</p>
+<mat-form-field class="form-card">
+  <input
+    matInput
+    type="search"
+    required
+    [(ngModel)]="url"
+    placeholder="Enter the link here"
+  />
+  <button matSuffix mat-icon-button aria-label="Search" (click)="handleUrl()">
+    <mat-icon>search</mat-icon>
+  </button>
+</mat-form-field>

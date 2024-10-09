@@ -4,17 +4,11 @@
 
 <mat-card appearance="outlined" class="container-card">
   <mat-card-header class="input-card">
-    <mat-form-field class="form-card">
-      <input matInput type="search" required [(ngModel)]="url" />
-      <button
-        matSuffix
-        mat-icon-button
-        aria-label="Search"
-        (click)="handleUrl()"
-      >
-        <mat-icon>search</mat-icon>
-      </button>
-    </mat-form-field>
+    <app-input-url
+      [url]="url()"
+      [shortededUrl]="shortededUrl()"
+      (onHandleUrl)="updateUrl($event)"
+    />
   </mat-card-header>
 
   <app-shorteded-url [shortededUrl]="shortededUrl()" />
