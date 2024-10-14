@@ -9,5 +9,5 @@ import { MatCardContent } from '@angular/material/card';
   styleUrl: './shorteded-url.component.scss',
 })
 export class ShortededUrlComponent {
-  shortededUrl = input('');
+  shortUrl = input('');
 }

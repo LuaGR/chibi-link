@@ -6,8 +6,8 @@ app.use(cors()); // Enable CORS
 app.use(express.json());
 app.post('/', (req, res) => {
     const { url } = req.body
-    const shortededUrl = Math.random().toString(36).substr(2, 5)
-    res.status(200).send({ url, shortededUrl })
+    const shortUrl = Math.random().toString(36).substr(2, 5)
+    res.status(200).send({ url, shortUrl })
 })
 
 //Habilitar puerto

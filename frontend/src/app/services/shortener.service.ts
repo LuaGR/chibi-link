@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 export interface Url {
   url: string;
-  shortededUrl: string;
+  shortUrl: string;
 }
 
 @Injectable({

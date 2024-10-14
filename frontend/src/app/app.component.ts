@@ -21,10 +21,10 @@ export class AppComponent {
   shortenerService = inject(ShortenerService);
   title = 'chibi-link';
   url = signal<string>('');
-  shortededUrl = signal<string>('');
+  shortUrl = signal<string>('');
 
   updateUrl(event: string) {
-    this.shortededUrl.set(event);
-    console.log('Valor recibido del componente hijo: ', this.shortededUrl());
+    this.shortUrl.set(event);
+    console.log('Valor recibido del componente hijo: ', this.shortUrl());
   }
 }

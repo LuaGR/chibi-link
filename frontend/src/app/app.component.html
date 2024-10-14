@@ -6,10 +6,10 @@
   <mat-card-header class="input-card">
     <app-input-url
       [url]="url()"
-      [shortededUrl]="shortededUrl()"
+      [shortUrl]="shortUrl()"
       (onHandleUrl)="updateUrl($event)"
     />
   </mat-card-header>
 
-  <app-shorteded-url [shortededUrl]="shortededUrl()" />
+  <app-shorteded-url [shortUrl]="shortUrl()" />
 </mat-card>

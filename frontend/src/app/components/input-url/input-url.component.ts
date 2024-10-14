@@ -23,15 +23,15 @@ import { MatButtonModule } from '@angular/material/button';
 export class InputUrlComponent {
   shortenerService = inject(ShortenerService);
   url = model<string>('');
-  shortededUrl = model<string>('');
+  shortUrl = model<string>('');
   onHandleUrl = output<string>();
 
   handleUrl() {
     this.shortenerService.postUrl(this.url()).subscribe((data: Url) => {
-      this.shortededUrl.set(data.shortededUrl);
-      console.log(this.shortededUrl());
+      this.shortUrl.set(data.shortUrl);
+      console.log(this.shortUrl());
 
-      this.onHandleUrl.emit(this.shortededUrl());
+      this.onHandleUrl.emit(this.shortUrl());
     });
   }
 }
