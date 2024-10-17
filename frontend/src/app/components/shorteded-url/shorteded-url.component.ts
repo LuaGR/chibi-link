@@ -10,4 +10,5 @@ import { MatCardContent } from '@angular/material/card';
 })
 export class ShortededUrlComponent {
   shortUrl = input('');
+  domain = 
 }

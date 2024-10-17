@@ -27,6 +27,8 @@ export class InputUrlComponent {
   onHandleUrl = output<string>();
 
   handleUrl() {
+    if (!this.url().trim()) return;
+
     this.shortenerService.postUrl(this.url()).subscribe((data: Url) => {
       this.shortUrl.set(data.shortUrl);
       console.log(this.shortUrl());
