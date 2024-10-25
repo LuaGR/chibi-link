@@ -1,13 +1,13 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { MatCardContent } from '@angular/material/card';
-import { environment } from '../../../environments/environment';
-
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-shorteded-url',
   standalone: true,
   imports: [MatCardContent],
   templateUrl: './shorteded-url.component.html',
   styleUrl: './shorteded-url.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ShortededUrlComponent {
   shortUrl = input('');

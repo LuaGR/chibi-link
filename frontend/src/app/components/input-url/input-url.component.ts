@@ -1,4 +1,10 @@
-import { Component, inject, model, output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  model,
+  output,
+} from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
@@ -19,6 +25,7 @@ import { MatButtonModule } from '@angular/material/button';
   ],
   templateUrl: './input-url.component.html',
   styleUrl: './input-url.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InputUrlComponent {
   shortenerService = inject(ShortenerService);
