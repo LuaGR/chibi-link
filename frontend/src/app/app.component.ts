@@ -10,6 +10,7 @@ import { ShortenerService } from './services/shortener.service';
 import { ShortededUrlComponent } from './components/shorteded-url/shorteded-url.component';
 import { InputUrlComponent } from './components/input-url/input-url.component';
 import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -17,9 +18,10 @@ import { HeaderComponent } from './components/header/header.component';
   imports: [
     RouterOutlet,
     MatCardModule,
-    ShortededUrlComponent,
-    InputUrlComponent,
     HeaderComponent,
+    InputUrlComponent,
+    ShortededUrlComponent,
+    FooterComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

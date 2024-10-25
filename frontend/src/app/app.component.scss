@@ -5,8 +5,17 @@
   gap: 2rem;
 }
 
+app-header {
+  width: 100%;
+}
+
+app-footer {
+  width: 100%;
+  margin-top: auto;
+}
+
 .container-card {
-  width: 60%;
+  width: 70vw;
   padding-bottom: 2rem;
 }
 

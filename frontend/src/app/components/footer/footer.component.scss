@@ -1,0 +1,48 @@
+.footer {
+  padding: 1rem;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+
+  &-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  &-text {
+    color: #6b7280;
+    font-size: 0.875rem;
+    text-align: center;
+  }
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #6b7280;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+  }
+
+  &-link {
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

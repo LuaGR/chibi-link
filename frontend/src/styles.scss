@@ -1,15 +1,29 @@
+* {
+  --background: #ffffff;
+  --primary-color: #d7e3ff;
+  --secondary-color: rgb(255, 227, 227);
+  --desactivated: rgb(201, 233, 210);
+  --button: #3da9fc;
+  --text: #031c3f;
+}
+
 html,
 body {
+  width: 100%;
   height: 100%;
 }
 
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: var(--text);
 }
 
 app-root {
   display: flex;
   flex-direction: column;
   place-items: center;
+  gap: 4vh;
+  width: 100%;
+  height: 100%;
 }

@@ -1,19 +1,28 @@
 mat-card-header {
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   place-items: center;
+  background-color: var(--primary-color);
+  padding: 2rem 0 2rem 0;
+  gap: 0.3rem;
 
-  h1 {
-    font-size: 65px;
+  .title {
+    font-size: 60px;
+    margin-bottom: 0;
   }
 
-  div {
-    max-width: 80%;
-    line-height: 2;
+  .subtitle-container {
+    max-width: 90%;
+    line-height: 1.5;
 
-    h3 {
+    @media (min-width: 1200px) {
+      max-width: 50%;
+    }
+
+    .subtitle {
       text-align: center;
+      font-weight: 200;
     }
   }
 }
