@@ -1,9 +1,8 @@
-<mat-card-header>
-  <h1>Chibi Link</h1>
-</mat-card-header>
+<app-header />
 
 <mat-card appearance="outlined" class="container-card">
   <mat-card-header class="input-card">
+    <mat-card-subtitle>Shorten your link</mat-card-subtitle>
     <app-input-url
       [url]="url()"
       [shortUrl]="shortUrl()"

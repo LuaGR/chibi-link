@@ -9,6 +9,7 @@ import { MatCardModule } from '@angular/material/card';
 import { ShortenerService } from './services/shortener.service';
 import { ShortededUrlComponent } from './components/shorteded-url/shorteded-url.component';
 import { InputUrlComponent } from './components/input-url/input-url.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,7 @@ import { InputUrlComponent } from './components/input-url/input-url.component';
     MatCardModule,
     ShortededUrlComponent,
     InputUrlComponent,
+    HeaderComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
