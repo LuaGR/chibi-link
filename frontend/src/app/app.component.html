@@ -1,16 +1,14 @@
 <app-header />
 
-<mat-card appearance="outlined" class="container-card">
-  <mat-card-header class="input-card">
-    <mat-card-subtitle>Shorten your link</mat-card-subtitle>
-    <app-input-url
-      [url]="url()"
-      [shortUrl]="shortUrl()"
-      (onHandleUrl)="updateUrl($event)"
-    />
-  </mat-card-header>
+<mat-card-header class="input-card">
+  <mat-card-subtitle>Shorten your link</mat-card-subtitle>
+  <app-input-url
+    [url]="url()"
+    [shortUrl]="shortUrl()"
+    (onHandleUrl)="updateUrl($event)"
+  />
+</mat-card-header>
 
-  <app-shorteded-url [shortUrl]="shortUrl()" />
-</mat-card>
+<app-shorteded-url [shortUrl]="shortUrl()" />
 
 <app-footer />

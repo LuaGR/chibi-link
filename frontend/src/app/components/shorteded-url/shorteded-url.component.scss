@@ -1,0 +1,23 @@
+.container-card {
+  min-width: 30rem;
+  padding-block: 2rem;
+  text-align: center;
+
+  .result-card {
+    position: relative;
+
+    .short-url {
+      text-decoration: none;
+    }
+
+    .copy-button {
+      position: absolute;
+      right: 2rem;
+      top: 0.3rem;
+
+      mat-icon {
+        margin: 0;
+      }
+    }
+  }
+}

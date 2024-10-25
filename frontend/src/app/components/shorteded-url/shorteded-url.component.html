@@ -1,6 +1,17 @@
-<mat-card-content class="result-card">
-  @if (shortUrl()) {
-  <a href="{{ result }}"> {{ result }} </a>
-  }
-  <a>Prueba url</a>
-</mat-card-content>
+@if (!shortUrl()) {
+<mat-card appearance="outlined" class="container-card">
+  <mat-card-content class="result-card">
+    <a href="{{ result }}" target="_blank" class="short-url"> {{ result }} </a>
+
+    <button
+      mat-raised-button
+      matTooltip="Copy your Chibi Link"
+      aria-label="Button that displays a tooltip when focused or hovered over"
+      class="copy-button"
+      (click)="copyToClipboard()"
+    >
+      <mat-icon>content_copy</mat-icon>
+    </button>
+  </mat-card-content>
+</mat-card>
+}
