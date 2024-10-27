@@ -4,7 +4,7 @@ import {
   inject,
   signal,
 } from '@angular/core';
-import { InputUrlComponent, ShortededUrlComponent } from '@/components';
+import { InputUrlComponent, ShortededUrlComponent } from './components';
 import { MatCardModule } from '@angular/material/card';
 import { ShortenerService } from '@/services/shortener.service';
 
