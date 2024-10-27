@@ -4,26 +4,14 @@ import {
   inject,
   signal,
 } from '@angular/core';
-import {
-  HeaderComponent,
-  InputUrlComponent,
-  ShortededUrlComponent,
-  FooterComponent,
-} from '@/components';
-
+import { InputUrlComponent, ShortededUrlComponent } from '@/components';
 import { MatCardModule } from '@angular/material/card';
 import { ShortenerService } from '@/services/shortener.service';
 
 @Component({
-  selector: 'app-home',
+  selector: 'home',
   standalone: true,
-  imports: [
-    HeaderComponent,
-    InputUrlComponent,
-    ShortededUrlComponent,
-    FooterComponent,
-    MatCardModule,
-  ],
+  imports: [InputUrlComponent, ShortededUrlComponent, MatCardModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
