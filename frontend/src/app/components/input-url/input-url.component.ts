@@ -38,6 +38,12 @@ export class InputUrlComponent {
   handleUrl() {
     if (!this.url().trim()) return;
 
+    const urlPattern = /^(ftp|http|https):\/\/[^ "]+$/;
+    if (!urlPattern.test(this.url().trim())) {
+      alert('The URL is not in the correct format');
+      return;
+    }
+
     this.shortenerService.postUrl(this.url()).subscribe((data: Url) => {
       this.shortUrl.set(data.shortUrl);
       console.log(this.shortUrl());
