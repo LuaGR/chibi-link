@@ -1,0 +1,9 @@
+<main class="container-url">
+  <app-input-url
+    [url]="url()"
+    [shortUrl]="shortUrl()"
+    (onHandleUrl)="updateUrl($event)"
+  />
+
+  <app-shorteded-url [shortUrl]="shortUrl()" />
+</main>

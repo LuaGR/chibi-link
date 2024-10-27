@@ -1,8 +1,17 @@
-$primary-color: var(--primary-color);
-
-app-header {
+app-input-url,
+app-shorteded-url {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  background-color: $primary-color;
+}
+
+app-input-url {
+  height: 150px;
+}
+
+app-shorteded-url {
+  height: 200px;
 }
 
 .container-url {
@@ -16,9 +25,4 @@ app-header {
   @media screen and (max-width: 600px) {
     width: 450px;
   }
-}
-
-app-footer {
-  width: 100%;
-  margin-top: auto;
 }
