@@ -35,6 +35,5 @@ export class AppComponent {
 
   updateUrl(event: string) {
     this.shortUrl.set(event);
-    console.log('Valor recibido del componente hijo: ', this.shortUrl());
   }
 }

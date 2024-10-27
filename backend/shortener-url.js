@@ -45,5 +45,5 @@ app.get('/:shortId', async (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Servidor escuchando en http://localhost:${port}`);
+    console.log(`Listening server on http://localhost:${port}`);
 });
