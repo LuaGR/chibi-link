@@ -1,5 +1,4 @@
 $primary-color: var(--primary-color);
-$container-width: 600px;
 
 app-header {
   width: 100%;
@@ -11,8 +10,12 @@ app-header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: $container-width;
+  width: 600px;
   height: 500px;
+
+  @media screen and (max-width: 600px) {
+    width: 450px;
+  }
 
   app-input-url,
   app-shorteded-url {

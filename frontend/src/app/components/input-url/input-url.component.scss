@@ -1,4 +1,4 @@
-.container-form {
+.form {
   height: 100%;
   width: 80%;
   display: flex;
@@ -7,11 +7,13 @@
   align-items: center;
   padding-block: 2em;
 
-  .label {
+  &-subtitle {
     font-size: large;
+    display: flex;
+    gap: 0.25em;
   }
 
-  .form-card {
+  &-card {
     width: 100%;
   }
 }

@@ -8,6 +8,11 @@
 
     .short-url {
       text-decoration: none;
+      color: inherit;
+
+      &:visited {
+        color: inherit;
+      }
     }
 
     .copy-button {
