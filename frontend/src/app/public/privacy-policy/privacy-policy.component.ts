@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'about',
+  selector: 'privacy-policy',
   standalone: true,
   imports: [],
-  templateUrl: './about.component.html',
-  styleUrl: './about.component.scss',
+  templateUrl: './privacy-policy.component.html',
+  styleUrl: './privacy-policy.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AboutComponent {}
+export class PrivacyPolicyComponent {}
