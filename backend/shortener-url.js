@@ -13,10 +13,21 @@ app.post('/', async (req, res) => {
     const shortUrl = Math.random().toString(36).substr(2, 5)
 
     try {
+
+        const existingLink = await prisma.link.findUnique({
+            where: { url }
+        });
+
+        if (existingLink) {
+            return res.status(200).send(existingLink);
+        }
+
+
         const data = await prisma.link.create({
             data: { url, shortUrl }
-        })
-        return res.status(200).send(data)
+        });
+
+        return res.status(200).send(data);
     }
 
     catch (error) {
