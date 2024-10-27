@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { ShortenerService } from '../../services/shortener.service';
 import { Url } from '../../services/shortener.service';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-input-url',
@@ -22,6 +23,7 @@ import { MatButtonModule } from '@angular/material/button';
     FormsModule,
     MatInputModule,
     MatButtonModule,
+    MatCardModule,
   ],
   templateUrl: './input-url.component.html',
   styleUrl: './input-url.component.scss',

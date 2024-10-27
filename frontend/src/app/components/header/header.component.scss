@@ -5,8 +5,7 @@ mat-card-header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--primary-color);
-  padding: 2rem 0 2rem 0;
+  padding: 2rem 0 3rem 0;
   gap: 0.3rem;
 
   .title {
@@ -25,6 +24,7 @@ mat-card-header {
     .subtitle {
       text-align: center;
       font-weight: 200;
+      font-size: large;
     }
   }
 }

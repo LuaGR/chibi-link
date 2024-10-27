@@ -1,6 +1,13 @@
+$colors: (
+  background: #ffffff,
+  primary-color: #d7e3ff,
+  text: #031c3f,
+);
+
 * {
-  --background: #ffffff;
-  --primary-color: #d7e3ff;
+  @each $name, $color in $colors {
+    --#{$name}: #{$color};
+  }
 }
 
 html,
@@ -18,7 +25,7 @@ body {
 app-root {
   display: flex;
   flex-direction: column;
-  place-items: center;
+  align-items: center;
   gap: 3rem;
   width: 100%;
   height: 100%;
