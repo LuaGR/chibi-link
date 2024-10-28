@@ -13,13 +13,12 @@ app.use(cors({
     allowedHeaders: ['Content-Type']
 }));
 
+app.use(cors(corsOptions));
 app.use(express.json());
 
 
 app.post('/api/', async (req, res) => {
     const { url } = req.body;
-
-
     const shortUrl = Math.random().toString(36).substr(2, 5);
 
     try {
