@@ -12,11 +12,11 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/backend/shortener-url.js"
+      "dest": "/frontend/dist/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "/frontend/dist/$1"
+      "dest": "/backend/shortener-url.js"
     }
   ]
 }
