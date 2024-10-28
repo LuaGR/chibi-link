@@ -1,0 +1,14 @@
+{
+  "name": "chibi-link",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "pnpm --filter frontend build & pnpm --filter backend build",
+    "dev": "pnpm --filter frontend start & pnpm --filter backend dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
