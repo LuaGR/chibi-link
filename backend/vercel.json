@@ -1,14 +1,15 @@
 {
+  "version": 2,
   "builds": [
     {
-      "src": "backend/shortener-url.js",
+      "src": "shortener-url.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/api(.*)",
-      "dest": "/backend/shortener-url.js$1"
+      "dest": "/"
     }
   ]
 }
