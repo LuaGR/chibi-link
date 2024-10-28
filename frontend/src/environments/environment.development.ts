@@ -1,7 +1,9 @@
 interface Env {
   domain: string;
+  production: boolean;
 }
 
 export const environment: Env = {
-  domain: 'http://localhost:3000/api/',
+  production: false,
+  domain: 'http://chibi-server.vercel.app/api/',
 };

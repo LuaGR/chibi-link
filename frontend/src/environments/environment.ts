@@ -1,7 +1,9 @@
 interface Env {
   domain: string;
+  production: boolean;
 }
 
 export const environment: Env = {
-  domain: 'https://cl.vercel.app/',
+  production: true,
+  domain: 'http://localhost:3000/api/',
 };
