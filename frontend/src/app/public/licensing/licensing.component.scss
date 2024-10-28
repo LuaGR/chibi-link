@@ -1,0 +1,41 @@
+$primary-color: #3f51b5;
+$text-color: #424242;
+
+.licensing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  width: 100%;
+  max-width: 700px;
+  margin: 3em;
+
+  &-header {
+    margin-bottom: 2em;
+
+    mat-card-title {
+      color: $text-color;
+      text-align: center;
+      font-size: xx-large;
+      font-weight: bold;
+    }
+  }
+
+  mat-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+  }
+
+  &-section {
+    h2 {
+      color: $text-color;
+      font-size: 1.2rem;
+    }
+
+    p {
+      margin: 0.5rem 0;
+      line-height: 1.6;
+    }
+  }
+}
