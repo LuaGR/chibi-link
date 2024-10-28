@@ -5,5 +5,5 @@ interface Env {
 
 export const environment: Env = {
   production: true,
-  domain: 'http://localhost:3000/api/',
+  domain: 'https://chibi-server.vercel.app/api/',
 };
