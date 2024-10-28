@@ -5,19 +5,6 @@ app-header {
   background-color: $primary-color;
 }
 
-.container-url {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 600px;
-  height: 500px;
-
-  @media screen and (max-width: 600px) {
-    width: 450px;
-  }
-}
-
 app-footer {
   width: 100%;
   margin-top: auto;
