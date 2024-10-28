@@ -1,16 +1,26 @@
-const express = require('express')
-const cors = require('cors')
-const { PrismaClient } = require('@prisma/client')
-const prisma = new PrismaClient()
+const express = require('express');
+const cors = require('cors');
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
 
-const app = express()
+const app = express();
 const port = process.env.PORT || 3000;
-app.use(cors());
+
+
+app.use(cors({
+    origin: 'https://chibi-link.vercel.app',
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type']
+}));
+
 app.use(express.json());
 
+
 app.post('/api/', async (req, res) => {
-    const { url } = req.body
-    const shortUrl = Math.random().toString(36).substr(2, 5)
+    const { url } = req.body;
+
+
+    const shortUrl = Math.random().toString(36).substr(2, 5);
 
     try {
 
@@ -19,7 +29,7 @@ app.post('/api/', async (req, res) => {
         });
 
         if (existingLink) {
-            return res.status(200).send(existingLink);
+            return res.status(200).json(existingLink);
         }
 
 
@@ -27,25 +37,28 @@ app.post('/api/', async (req, res) => {
             data: { url, shortUrl }
         });
 
-        return res.status(200).send(data);
+        return res.status(201).json(data);
+    } catch (error) {
+        console.error('Error creating URL:', error);
+        return res.status(500).json({ error: 'Error creating URL' });
     }
+});
 
-    catch (error) {
-        return res.status(500).send({ error })
-    }
-})
 
 app.get('/api/:shortId', async (req, res) => {
     const { shortId } = req.params;
 
     try {
+
         const data = await prisma.link.findUnique({
             where: { shortUrl: shortId },
         });
 
+
         if (!data) {
             return res.status(404).json({ error: 'URL not found' });
         }
+
 
         return res.redirect(302, data.url);
     } catch (error) {
@@ -55,5 +68,5 @@ app.get('/api/:shortId', async (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Listening server on http://localhost:${port}`);
+    console.log(`Server running on http://localhost:${port}`);
 });
