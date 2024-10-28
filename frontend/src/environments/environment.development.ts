@@ -3,5 +3,5 @@ interface Env {
 }
 
 export const environment: Env = {
-  domain: 'http://localhost:3000/',
+  domain: 'http://localhost:3000/api/',
 };

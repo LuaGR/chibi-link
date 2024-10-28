@@ -15,8 +15,8 @@
       "dest": "/frontend/dist/$1"
     },
     {
-      "src": "/(.*)",
-      "dest": "/backend/shortener-url.js"
+      "src": "/api(.*)",
+      "dest": "/backend/shortener-url.js$1"
     }
   ]
 }

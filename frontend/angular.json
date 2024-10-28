@@ -35,7 +35,7 @@
               "src/styles.scss"
             ],
             "scripts": [],
-            "baseHref": "/frontend/"
+            "baseHref": ""
           },
           "configurations": {
             "production": {
