@@ -1,4 +1,6 @@
 {
   "version": 2,
-  "rewrites": [{ "source": "/shortener-url.js", "destination": "/api" }]
+  "rewrites": [{ "source": "/shortener-url.js", "destination": "/" }],
+  "buildCommand": "pnpm install && pnpm run build",
+  "installCommand": "pnpm install"
 }
