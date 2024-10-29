@@ -1,6 +1,15 @@
 {
   "version": 2,
-  "rewrites": [{ "source": "/shortener-url.js", "destination": "/" }],
-  "buildCommand": "pnpm install && pnpm run build",
-  "installCommand": "pnpm install"
+  "builds": [
+    {
+      "src": "shortener-url.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api(.*)",
+      "dest": "/"
+    }
+  ]
 }
