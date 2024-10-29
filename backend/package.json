@@ -1,12 +1,12 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "shortener-url.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node /shortener.url.js",
-    "dev": "nodemon /shortener-url.js",
+    "start": "node /index.js",
+    "dev": "nodemon /index.js",
     "prisma:generate": "prisma generate --schema=./prisma/schema.prisma",
     "prisma:migrate": "prisma migrate deploy --schema=./prisma/schema.prisma",
     "build": "pnpm run prisma:generate"

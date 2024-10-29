@@ -17,6 +17,9 @@ app.use(cors({
 app.use(cors(corsOptions));
 app.use(express.json());
 
+app.get('/test', (req, res) => {
+    res.send('Server is working!');
+});
 
 app.post('/api/', async (req, res) => {
     const { url } = req.body;
