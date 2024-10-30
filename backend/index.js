@@ -37,7 +37,12 @@ app.post('/', async (req, res) => {
         return res.status(201).json(data);
     } catch (error) {
         console.error('Error creating URL:', error);
-        return res.status(500).json({ error: 'Error creating URL' });
+
+        if (error instanceof prisma.PrismaClientKnownRequestError) {
+            return res.status(400).json({ error: 'Known request error', details: error.message });
+        } else {
+            return res.status(500).json({ error: 'Internal server error' });
+        }
     }
 });
 
