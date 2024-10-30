@@ -1,7 +1,7 @@
-import type { Url } from '@/models';
+import type { Url, UrlApi } from '@/models';
 
 export class UrlAdapter {
-  static adapt(data: any): Url {
+  static adapt(data: UrlApi): Url {
     return {
       shortUrl: data.shortUrl || '',
       url: data.url || '',
