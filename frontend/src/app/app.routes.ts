@@ -4,6 +4,7 @@ import {
   AboutComponent,
   PrivacyPolicyComponent,
   LicensingComponent,
+  PageNotFoundComponent,
 } from './public';
 
 export const routes: Routes = [
@@ -11,4 +12,5 @@ export const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'licensing', component: LicensingComponent },
+  { path: '**', component: PageNotFoundComponent },
 ];
