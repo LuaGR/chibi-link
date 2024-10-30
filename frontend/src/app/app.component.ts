@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
-import { HomeComponent } from './public/home/home.component';
+import { HomeComponent } from './public';
 import { FooterComponent, HeaderComponent } from './components';
 
 @Component({

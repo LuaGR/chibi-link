@@ -9,10 +9,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
-import { ShortenerService } from '@/services/shortener.service';
-import { Url } from '@/services/shortener.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { ShortenerService } from '@/services/shortener.service';
+import type { Url } from '@/models/url';
 
 @Component({
   selector: 'app-input-url',
