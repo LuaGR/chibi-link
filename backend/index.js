@@ -16,10 +16,6 @@ app.use(cors({
 
 app.use(express.json());
 
-app.get('/test', (req, res) => {
-    res.send('Server is working!');
-});
-
 app.post('/', async (req, res) => {
     const { url } = req.body;
     const shortUrl = Math.random().toString(36).substr(2, 5);
