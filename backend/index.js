@@ -20,7 +20,7 @@ app.get('/test', (req, res) => {
     res.send('Server is working!');
 });
 
-app.post('/api/', async (req, res) => {
+app.post('/', async (req, res) => {
     const { url } = req.body;
     const shortUrl = Math.random().toString(36).substr(2, 5);
 
@@ -47,7 +47,7 @@ app.post('/api/', async (req, res) => {
 });
 
 
-app.get('/api/:shortId', async (req, res) => {
+app.get('/:shortId', async (req, res) => {
     const { shortId } = req.params;
 
     try {
