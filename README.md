@@ -13,9 +13,10 @@ Chibi Link es un acortador de URLs simple y eficiente que permite a los usuarios
 
 Este proyecto utiliza las siguientes tecnologías:
 
-- **Frontend**: Angular, Angular Material
+- **Frontend**: Angular
 - **Backend**: Node.js, Express
 - **Base de datos**: Supabase (PostgreSQL)
+- **Design System**: Angular Material
 - **ORM**: Prisma
 - **Despliegue**: Vercel
 - **Arquitectura**: Clean Architecture
