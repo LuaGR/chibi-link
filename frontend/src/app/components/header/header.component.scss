@@ -1,4 +1,4 @@
-mat-card-header {
+.header {
   width: 100%;
   height: 30vh;
   display: flex;
@@ -7,6 +7,10 @@ mat-card-header {
   align-items: center;
   padding: 2rem 0 3rem 0;
   gap: 0.3rem;
+
+  &-link {
+    text-decoration: none;
+  }
 
   .title {
     font-size: 60px;
