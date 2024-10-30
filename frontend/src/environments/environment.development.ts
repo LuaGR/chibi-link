@@ -5,5 +5,5 @@ interface Env {
 
 export const environment: Env = {
   production: false,
-  domain: 'http://localhost:3000/api/',
+  domain: 'http://localhost:3000/',
 };
