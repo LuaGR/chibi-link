@@ -16,6 +16,6 @@ export class ShortenerService {
   postUrl(url: string): Observable<Url> {
     return this.http
       .post<Url>(`${this.apiUrl}`, { url })
-      .pipe(map((response) => UrlAdapter(response)));
+      .pipe(map((response) => UrlAdapter.adapt(response)));
   }
 }

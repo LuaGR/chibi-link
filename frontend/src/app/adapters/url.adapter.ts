@@ -1,6 +1,10 @@
-import type { Url, UrlApi } from '@/models';
+import type { Url } from '@/models';
 
-export const UrlAdapter = (data: UrlApi): Url => ({
-  shortUrl: data.shortUrl || '',
-  url: data.url || '',
-});
+export class UrlAdapter {
+  static adapt(data: any): Url {
+    return {
+      shortUrl: data.shortUrl || '',
+      url: data.url || '',
+    };
+  }
+}
