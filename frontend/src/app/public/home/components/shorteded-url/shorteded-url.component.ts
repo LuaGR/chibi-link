@@ -1,20 +1,14 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { MatCard, MatCardContent } from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatButtonModule } from '@angular/material/button';
-import { environment } from 'src/environments/environment';
 import { MatIcon } from '@angular/material/icon';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-shorteded-url',
   standalone: true,
-  imports: [
-    MatCardContent,
-    MatCard,
-    MatTooltipModule,
-    MatButtonModule,
-    MatIcon,
-  ],
+  imports: [MatCardModule, MatTooltipModule, MatButtonModule, MatIcon],
   templateUrl: './shorteded-url.component.html',
   styleUrl: './shorteded-url.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
