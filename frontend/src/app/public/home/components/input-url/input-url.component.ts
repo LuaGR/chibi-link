@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { ShortenerService } from '@/services/shortener.service';
+import { isValidUrl } from './utilities/is-valid-url';
 import type { Url } from '@/models/url';
 
 @Component({
@@ -38,8 +39,7 @@ export class InputUrlComponent {
   handleUrl() {
     if (!this.url().trim()) return;
 
-    const urlPattern = /^(ftp|http|https):\/\/[^ "]+$/;
-    if (!urlPattern.test(this.url().trim())) {
+    if (!isValidUrl(this.url())) {
       alert('The URL is not in the correct format');
       return;
     }
