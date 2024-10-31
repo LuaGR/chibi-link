@@ -15,9 +15,9 @@ app.use(cors({
 
 app.use(express.json());
 
-// Middleware para manejar timeouts
+//Middleware Timeout
 app.use((req, res, next) => {
-    res.setTimeout(5000, () => { // 5 segundos
+    res.setTimeout(5000, () => {
         console.log('Request has timed out.');
         res.status(503).send('Server is busy, please try again later.');
     });
