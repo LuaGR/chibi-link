@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
     this.seo.meta.updateTag({
       name: 'description',
       content:
-        'Acorta tus enlaces largos de forma rápida y fácil con nuestro Acortador de URL. Comparte enlaces más atractivos y obtén estadísticas en tiempo real sobre su rendimiento.',
+        'Quickly and easily shorten your long URLs with our URL Shortener. Share more attractive links and gain real-time statistics on their performance.',
     });
     this.seo.setCanonicalURL('https://chibi-link.vercel.app/');
     this.seo.setIndexFollow(true);
