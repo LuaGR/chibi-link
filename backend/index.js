@@ -5,6 +5,7 @@ import prisma from './prismaClient.js';
 const app = express();
 const port = process.env.PORT ?? 3000;
 
+
 app.use(express.json());
 app.use(cors({
     origin: ['https://chibi-link.vercel.app', 'http://localhost:4200'],
@@ -29,7 +30,7 @@ app.post('/', async (req, res) => {
 
     try {
         const existingLink = await prisma.link.findUnique({
-            where: { url }
+            where: { url: url }
         });
 
         if (existingLink) {
