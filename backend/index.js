@@ -1,15 +1,13 @@
 import express from 'express';
 import cors from 'cors';
 import prisma from './prismaClient.js';
-import { corsHeaders } from './_shared/cors.ts';
+
 
 const app = express();
 const port = process.env.PORT ?? 3000;
 
 
-app.use(cors({
-    corsHeaders
-}));
+app.use(cors());
 
 app.use(express.json());
 
