@@ -2,19 +2,17 @@ import express from 'express';
 import cors from 'cors';
 import prisma from './prismaClient.js';
 
-
 const app = express();
 const port = process.env.PORT ?? 3000;
 
-
+app.use(express.json());
 app.use(cors({
     origin: ['https://chibi-link.vercel.app', 'http://localhost:4200'],
     methods: ['GET', 'POST', 'OPTIONS'],
     allowedHeaders: ['Content-Type'],
     credentials: true
 }));
-
-app.use(express.json());
+app.disable('x-powered-by')
 
 app.use((req, res, next) => {
     res.setTimeout(5000, () => {
@@ -29,7 +27,6 @@ app.post('/', async (req, res) => {
     const shortUrl = Math.random().toString(36).substr(2, 5);
 
     try {
-
         const existingLink = await prisma.link.findUnique({
             where: { url }
         });
@@ -38,12 +35,12 @@ app.post('/', async (req, res) => {
             return res.status(200).json(existingLink);
         }
 
-
         const data = await prisma.link.create({
             data: { url, shortUrl }
         });
 
         return res.status(201).json(data);
+
     } catch (error) {
         console.error('Error creating URL:', error);
 
