@@ -15,7 +15,6 @@ app.use(cors({
 
 app.use(express.json());
 
-//Middleware Timeout
 app.use((req, res, next) => {
     res.setTimeout(5000, () => {
         console.log('Request has timed out.');
