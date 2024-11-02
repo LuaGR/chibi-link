@@ -1,4 +1,4 @@
-import prisma from '../../prismaClient.js';
+import prisma from '../config/prismaClient.js';
 
 class UrlModel {
     static async findUrlByOriginal (url) {
