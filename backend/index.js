@@ -7,7 +7,12 @@ const app = express();
 const port = process.env.PORT ?? 3000;
 
 
-app.use(cors());
+app.use(cors({
+    origin: ['https://chibi-link.vercel.app', 'http://localhost:4200'],
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type'],
+    credentials: true
+}));
 
 app.use(express.json());
 
