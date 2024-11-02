@@ -8,10 +8,19 @@ const port = process.env.PORT ?? 3000;
 
 app.use(express.json());
 app.use(cors({
-    origin: ['https://chibi-link.vercel.app', 'http://localhost:4200'],
-    methods: ['GET', 'POST', 'OPTIONS'],
-    allowedHeaders: ['Content-Type'],
-    credentials: true
+    origin: (origin, callback) => {
+        const ACCEPTED_ORIGINS = ['https://chibi-link.vercel.app', 'http://localhost:4200']
+
+        if (ACCEPTED_ORIGINS.includes(origin)) {
+            return callback(null, true)
+        }
+
+        if (!origin) {
+            return callback(null, true)
+        }
+
+        return callback(new Error('Not allowed by CORS'))
+    }
 }));
 app.disable('x-powered-by')
 
@@ -24,13 +33,12 @@ app.use((req, res, next) => {
 });
 
 app.post('/', async (req, res) => {
-    res.header('Access-Control-Allow-Origin', 'https://chibi-link.vercel.app/')
     const { url } = req.body;
     const shortUrl = Math.random().toString(36).substr(2, 5);
 
     try {
         const existingLink = await prisma.link.findUnique({
-            where: { url: url }
+            where: { url }
         });
 
         if (existingLink) {
@@ -56,7 +64,6 @@ app.post('/', async (req, res) => {
 
 
 app.get('/:shortId', async (req, res) => {
-    res.header('Access-Control-Allow-Origin', 'https://chibi-link.vercel.app/')
     const { shortId } = req.params;
 
     try {
