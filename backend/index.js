@@ -23,6 +23,7 @@ app.use((req, res, next) => {
 });
 
 app.post('/', async (req, res) => {
+    res.header('Access-Control-Allow-Origin', 'https://chibi-link.vercel.app/')
     const { url } = req.body;
     const shortUrl = Math.random().toString(36).substr(2, 5);
 
@@ -54,6 +55,7 @@ app.post('/', async (req, res) => {
 
 
 app.get('/:shortId', async (req, res) => {
+    res.header('Access-Control-Allow-Origin', 'https://chibi-link.vercel.app/')
     const { shortId } = req.params;
 
     try {
