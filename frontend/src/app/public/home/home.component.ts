@@ -18,7 +18,6 @@ import { ShortenerService } from '@/services/shortener.service';
 })
 export class HomeComponent {
   shortenerService = inject(ShortenerService);
-  title = 'chibi-link';
   url = signal<string>('');
   shortUrl = signal<string>('');
 
