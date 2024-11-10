@@ -1,4 +1,4 @@
-export interface UrlApi {
+export interface UrlResponse {
   url: string;
   shortUrl: string;
 }

@@ -1,10 +1,10 @@
-import type { Url } from '@/models';
+import type { Url, UrlResponse } from '@/models';
 
 export class UrlAdapter {
-  static adapt(data: any): Url {
+  static adapt(data: UrlResponse): Url {
     return {
-      shortUrl: data.shortUrl || '',
       url: data.url || '',
+      shortUrl: data.shortUrl || '',
     };
   }
 }
