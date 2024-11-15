@@ -6,6 +6,10 @@
   .result-card {
     position: relative;
 
+    .error {
+      margin: 0 auto;
+    }
+
     .short-url {
       text-decoration: none;
       color: inherit;

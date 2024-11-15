@@ -1,4 +1,4 @@
-@if (shortUrl()) {
+@defer (when shortUrl()) {
 <mat-card appearance="outlined" class="container-card fade-slide-in">
   <mat-card-content class="result-card">
     <a href="{{ result }}" target="_blank" class="short-url"> {{ result }} </a>
@@ -14,4 +14,13 @@
     </button>
   </mat-card-content>
 </mat-card>
+} @loading ( minimum 1s) {
+<mat-spinner />
+} @error {
+<mat-card appearance="outlined" class="container-card fade-slide-in">
+  <mat-card-content class="result-card">
+    <p class="error">Failed to shorten url</p>
+  </mat-card-content>
+</mat-card>
+
 }
