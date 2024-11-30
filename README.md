@@ -1,6 +1,6 @@
 # ✂️ Chibi Link
 
-Chibi Link es un acortador de URLs simple y eficiente que permite a los usuarios transformar enlaces largos en enlaces cortos y fáciles de compartir. Este proyecto está diseñado para ser fácil de usar y se puede integrar en aplicaciones web. La arquitectura del sistema se basa en **Clean Architecture** en el frontend, asegurando una separación clara de las preocupaciones, y **MVC (Modelo-Vista-Controlador)** en el backend, lo que facilita la organización y mantenimiento del código.
+Chibi Link es un acortador de URLs simple y eficiente que permite a los usuarios transformar enlaces largos en enlaces cortos y fáciles de compartir. Este proyecto está diseñado para ser fácil de usar y se puede integrar en aplicaciones web. La arquitectura del sistema se basa en **Clean Architecture** con **Screaming Architecture** en el frontend, asegurando una separación clara de las preocupaciones, y **MVC (Modelo-Vista-Controlador)** en el backend, lo que facilita la organización y mantenimiento del código.
 
 ## 🌟 Características
 
@@ -19,4 +19,4 @@ Este proyecto utiliza las siguientes tecnologías:
 - **Design System**: Angular Material
 - **ORM**: Prisma
 - **Despliegue**: Vercel
-- **Arquitectura**: Clean Architecture en el cliente y MVC en el servidor
+- **Arquitectura**: Clean Architecture con Screaming Architecture en el cliente y MVC en el servidor
