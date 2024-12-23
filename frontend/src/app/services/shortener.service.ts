@@ -9,7 +9,6 @@ import { UrlAdapter } from '@/adapters/url.adapter';
   providedIn: 'root',
 })
 export class ShortenerService {
-  constructor() {}
   private apiUrl = environment.domain;
   private http = inject(HttpClient);
 
