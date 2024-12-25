@@ -13,7 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { ShortenerService } from '@/services/shortener.service';
 import { isValidUrl } from './utilities/is-valid-url';
-import type { Url } from '@/models/url';
+import type { Url } from '@/models/url.model';
 
 @Component({
   selector: 'app-input-url',

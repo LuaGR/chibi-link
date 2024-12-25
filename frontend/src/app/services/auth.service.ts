@@ -1,3 +1,5 @@
+import { AuthAdapter } from '@/adapters/auth.adapter';
+import { AuthData, LoginResponse } from '@/models';
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
@@ -9,7 +11,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthService {
 
-  private baseUrl = environment.baseUrl;
+  private readonly baseUrl = environment.baseUrl;
   private http = inject(HttpClient);
   private router = inject(Router)
 
@@ -33,6 +35,18 @@ export class AuthService {
         this.logOut()
         return throwError(() => error)
       }))
+  }
+
+  register(user: AuthData): Observable<void> {
+    return this.http.post<void>(`${this.baseUrl}/register`, user)
+  }
+
+  login(user: AuthData): Observable<string> {
+    return this.http
+      .post<LoginResponse>(`${this.baseUrl}/login`, user)
+      .pipe(
+        map(AuthAdapter.adapt),
+      )
   }
 
   logOut() {

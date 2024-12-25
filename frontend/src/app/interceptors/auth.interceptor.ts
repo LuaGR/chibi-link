@@ -1,4 +1,5 @@
 import { AuthService } from '@/services/auth.service';
+import { LocalKeys, LocalManagerService } from '@/services/local-manager.service';
 import { isPlatformServer } from '@angular/common';
 import { HttpErrorResponse, HttpInterceptorFn } from '@angular/common/http';
 import { inject, PLATFORM_ID } from '@angular/core';
@@ -12,7 +13,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
 
   const headers = req.headers.set('Content-Type', 'Application/json')
 
-  const token = localStorage.getItem('token')
+  const token = LocalManagerService.getItem(LocalKeys.token)
 
   if(token) {
     headers.set('Authorization', `Bearer ${token}`)
@@ -30,7 +31,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
           .pipe(
               switchMap( newToken => {
 
-                localStorage.setItem('token', newToken)
+                LocalManagerService.setItem(LocalKeys.token, newToken)
 
                 const updateHeaders = req.headers.set('Authorization', `Bearer ${newToken}`)
                 const newRequest = req.clone({headers: updateHeaders})

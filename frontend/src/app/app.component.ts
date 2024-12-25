@@ -6,7 +6,6 @@ import {
 } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
-import { HomeComponent } from './public';
 import { FooterComponent, HeaderComponent } from './components';
 import { SeoService } from './services/seo.service';
 
@@ -16,7 +15,6 @@ import { SeoService } from './services/seo.service';
   imports: [
     RouterOutlet,
     MatCardModule,
-    HomeComponent,
     HeaderComponent,
     FooterComponent,
   ],
