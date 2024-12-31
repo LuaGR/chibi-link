@@ -16,19 +16,18 @@ import { isValidUrl } from './utilities/is-valid-url';
 import type { Url } from '@/models/url.model';
 
 @Component({
-  selector: 'app-input-url',
-  standalone: true,
-  imports: [
-    MatFormFieldModule,
-    MatIconModule,
-    FormsModule,
-    MatInputModule,
-    MatButtonModule,
-    MatCardModule,
-  ],
-  templateUrl: './input-url.component.html',
-  styleUrl: './input-url.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-input-url',
+    imports: [
+        MatFormFieldModule,
+        MatIconModule,
+        FormsModule,
+        MatInputModule,
+        MatButtonModule,
+        MatCardModule,
+    ],
+    templateUrl: './input-url.component.html',
+    styleUrl: './input-url.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class InputUrlComponent {
   shortenerService = inject(ShortenerService);

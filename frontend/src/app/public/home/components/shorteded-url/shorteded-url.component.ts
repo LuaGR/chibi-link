@@ -7,18 +7,17 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-shorteded-url',
-  standalone: true,
-  imports: [
-    MatCardModule,
-    MatTooltipModule,
-    MatButtonModule,
-    MatIcon,
-    MatProgressSpinnerModule,
-  ],
-  templateUrl: './shorteded-url.component.html',
-  styleUrl: './shorteded-url.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-shorteded-url',
+    imports: [
+        MatCardModule,
+        MatTooltipModule,
+        MatButtonModule,
+        MatIcon,
+        MatProgressSpinnerModule,
+    ],
+    templateUrl: './shorteded-url.component.html',
+    styleUrl: './shorteded-url.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ShortededUrlComponent {
   shortUrl = input('');
