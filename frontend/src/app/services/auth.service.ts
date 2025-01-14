@@ -1,10 +1,10 @@
-import { AuthAdapter } from '@/adapters/auth.adapter';
+import { AuthAdapter } from '@/adapters';
 import { AuthData, LoginResponse } from '@/models';
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { catchError, map, Observable, tap, throwError } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { environment } from '@env/environment';
 
 @Injectable({
   providedIn: 'root'

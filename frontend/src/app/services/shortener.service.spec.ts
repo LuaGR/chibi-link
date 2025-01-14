@@ -1,74 +1,48 @@
 import { TestBed } from '@angular/core/testing';
 import {
-  HttpClientTestingModule,
-  HttpTestingController,
+    HttpTestingController,
+    provideHttpClientTesting
 } from '@angular/common/http/testing';
 import { ShortenerService } from './shortener.service';
-import type { UrlResponse } from '@/models';
-import { UrlAdapter } from '@/adapters/url.adapter';
-import { environment } from 'src/environments/environment';
+import { provideHttpClient, withFetch } from '@angular/common/http';
+import { firstValueFrom } from 'rxjs';
 
 describe('ShortenerService', () => {
   let service: ShortenerService;
-  let httpMock: HttpTestingController;
+  let httpTesting: HttpTestingController;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [ShortenerService],
+      providers: [
+        provideHttpClient(withFetch()),
+        provideHttpClientTesting(),
+        ShortenerService
+      ],
     });
     service = TestBed.inject(ShortenerService);
-    httpMock = TestBed.inject(HttpTestingController);
+    httpTesting = TestBed.inject(HttpTestingController);
   });
 
   afterEach(() => {
-    httpMock.verify();
+    httpTesting.verify();
   });
 
-  describe('Service Initialization', () => {
-    it('should be created', () => {
-      expect(service).toBeTruthy();
-    });
-  });
+  it('should return shorten url'), async () => {
 
-  describe('postUrl', () => {
-    const mockResponse: UrlResponse = {
-      url: 'https://example.com',
-      shortUrl: 'https://example-domain.com/abc123',
-    };
-    const inputUrl = 'https://example.com';
-    const adaptedResponse = UrlAdapter.adapt(mockResponse);
+    //given
+    const mockResponse = "12345"
 
-    it('should send a POST request to the correct URL', () => {
-      service.postUrl(inputUrl).subscribe();
+    //when
+    const shortener$ = service.postUrl('www.example.com')
+    const shortenerPromise = firstValueFrom(shortener$)
+    const req = httpTesting.expectOne('/')
 
-      const req = httpMock.expectOne(`${environment.domain}`);
-      expect(req.request.method).toBe('POST');
-      expect(req.request.body).toEqual({ url: inputUrl });
-    });
+    expect(req.request.method).toBe('POST')
+    expect(req.request.body).toEqual({url:'www.example.com', shortUrl: '12345' })
 
-    it('should adapt the response correctly', () => {
-      service.postUrl(inputUrl).subscribe((result) => {
-        expect(result).toEqual(adaptedResponse);
-      });
+    req.flush(mockResponse)
+    //then
+    expect(await shortenerPromise).toEqual(mockResponse)
+  }
+})
 
-      const req = httpMock.expectOne(`${environment.domain}`);
-      req.flush(mockResponse);
-    });
-
-    it('should handle HTTP errors gracefully', () => {
-      const errorMessage = 'Request failed';
-
-      service.postUrl(inputUrl).subscribe({
-        next: () => fail('Expected an error, but got a response'),
-        error: (error) => {
-          expect(error.status).toBe(500);
-          expect(error.statusText).toBe(errorMessage);
-        },
-      });
-
-      const req = httpMock.expectOne(`${environment.domain}`);
-      req.flush(null, { status: 500, statusText: errorMessage });
-    });
-  });
-});

@@ -5,7 +5,8 @@
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
     "types": [
-      "jasmine"
+      "jest",
+      "@testing-library/jest-dom"
     ]
   },
   "include": [
