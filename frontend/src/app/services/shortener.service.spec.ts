@@ -24,25 +24,26 @@ describe('ShortenerService', () => {
   });
 
   afterEach(() => {
-    httpTesting.verify();
+    httpTesting.verify()
   });
 
-  it('should return shorten url'), async () => {
+  it('should return shorten url', async () => {
 
     //given
-    const mockResponse = "12345"
+    const mockResponse = { url:'www.example.com', shortUrl: "12345" }
 
     //when
     const shortener$ = service.postUrl('www.example.com')
     const shortenerPromise = firstValueFrom(shortener$)
-    const req = httpTesting.expectOne('/')
+    const req = httpTesting.expectOne('https://chlk.vercel.app/')
 
     expect(req.request.method).toBe('POST')
-    expect(req.request.body).toEqual({url:'www.example.com', shortUrl: '12345' })
+    expect(req.request.body).toEqual({url:'www.example.com'})
 
     req.flush(mockResponse)
     //then
     expect(await shortenerPromise).toEqual(mockResponse)
   }
+)
 })
 
